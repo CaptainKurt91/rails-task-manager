@@ -1,0 +1,20 @@
+<h1>My tasks</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+  <li>
+    <%= link_to task.title, task_path(task)%>
+    <%=
+      link_to 'Delete', task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+     %>
+  </li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'Add new task', new_task_path(@task)%></p>
+
+<%# # Above the new_task of new_task_path refers the name it
+# has been assigned in the routes.rb and the parameter
+# refers to the instance variable
+# Same applys to task_path and (task) is the placeholder in the for each method
+ %>
