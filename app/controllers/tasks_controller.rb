@@ -42,5 +42,6 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :details)
+    # permit certain fields eg (title, details)
   end
 end
